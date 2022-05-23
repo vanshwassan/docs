@@ -30,8 +30,12 @@ for m in [mnemonic1, mnemonic2, mnemonic3]:
 algod_address = "http://localhost:4001"
 algod_token = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
+headers = {
+   "X-API-Key": algod_token,
+}
+
 # Initialize an algod client
-algod_client = algod.AlgodClient(algod_token=algod_token, algod_address=algod_address)
+algod_client = algod.AlgodClient(algod_token=algod_token, algod_address=algod_address, headers=headers)
 
 
 #   Utility function used to print created asset for account and assetid
